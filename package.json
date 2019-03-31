@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest",
     "clean": "rm -rf build",
-    "release": "npm run clean && npm run test && npm run build",
-    "build": "tsc && npm prune --production && cp -r node_modules build/ && rm -r build/node_modules/@types",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "release": "npm run clean && npm run test && npm run lint && npm run build && npm prune --production && cp -r node_modules build/ && rm -r build/node_modules/@types",
+    "build": "tsc",
     "lambda": "npm run release && cd build && zip -r deploy.zip *"
   },
   "repository": {
