@@ -14,12 +14,13 @@
       "lib": [
           "es6"
       ],
-      "target": "es2015",
+      "target": "es6",
       "allowJs": true
     },
     "exclude": [
         "build",
-        "node_modules"
+        "node_modules",
+        "**/__test__"
     ],
     "include": [
         "./src/**/*"        
